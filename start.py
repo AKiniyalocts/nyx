@@ -1,8 +1,10 @@
-from io import BytesIO
-from time import sleep
 from picamera import PiCamera
+from time import sleep
 
-# Create an in-memory stream
-my_stream = BytesIO()
 camera = PiCamera()
+camera.resolution = (1920, 1080)
+camera.framerate = 60
 camera.start_preview()
+
+while True:
+    sleep(1)
